@@ -1,6 +1,6 @@
 ---
-name: feature-02-clarify
-description: Risolvere ambiguità e domande aperte in una spec esistente. Usare quando l'utente dice "chiarisci", "questa spec è vaga", "cosa manca", o quando `spec.md` contiene marker `[?]` / TODO / punti ambigui. Seconda fase del workflow feature-driven, tra feature-01-spec e feature-03-plan-tasks.
+name: clarify
+description: Risolvere ambiguità e domande aperte in una spec esistente. Usare quando l'utente dice "chiarisci", "questa spec è vaga", "cosa manca", o quando `spec.md` contiene marker `[?]` / TODO / punti ambigui. Seconda fase del workflow feature-driven, tra spec e plan-tasks.
 ---
 
 # Chiarimento requisiti
@@ -24,4 +24,4 @@ Fase 2/8 del workflow. Elimina l'ambiguità prima di pianificare.
 
 - Massimo 4 domande per turno per non affaticare l'utente.
 - Non riscrivere la spec da zero — modifica chirurgica.
-- Se la spec è già chiara, dichiararlo esplicitamente e passare a `/skill:feature-03-plan-tasks`.
+- Se la spec è già chiara, dichiararlo esplicitamente e passare a `/skill:plan-tasks`.

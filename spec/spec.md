@@ -54,7 +54,7 @@ _Condizioni oggettive per dichiarare la feature "fatta"._
 
 ## Ambiguità aperte
 
-- [?] _domanda da chiarire in feature-02-clarify_
+- [?] _domanda da chiarire in clarify_
 
 ---
 

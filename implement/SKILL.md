@@ -1,5 +1,5 @@
 ---
-name: feature-05-implement
+name: implement
 description: Implementare la funzionalità seguendo un piano e una task list già definiti. Usare quando l'utente dice "implementa", "scrivi il codice", "esegui i task" o simili, e esistono già plan.md/tasks.md nel progetto. Quinta fase del workflow feature-driven.
 ---
 
@@ -17,7 +17,7 @@ Fase 5/8 del workflow. Da piano a codice funzionante.
    - Verificare rapidamente (compilazione/lint/test unitario mirato) prima di passare al successivo.
    - Marcarlo `done` in `tasks.md`.
 4. Se un task rivela che il piano è sbagliato: **fermarsi**, aggiornare il piano, non improvvisare.
-5. Al termine, suggerire `/skill:feature-06-test` per la validazione completa.
+5. Al termine, suggerire `/skill:test` per la validazione completa.
 
 ## Output atteso
 

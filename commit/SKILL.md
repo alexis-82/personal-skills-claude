@@ -1,5 +1,5 @@
 ---
-name: feature-08-commit
+name: commit
 description: Creare commit ben strutturati e opzionalmente aprire una pull request per una funzionalità completata, testata ed eventualmente refactorata. Usare quando l'utente dice "committa", "fai il commit", "apri PR" a chiusura del ciclo di lavoro. Ottava e ultima fase del workflow feature-driven.
 ---
 

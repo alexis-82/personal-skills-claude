@@ -1,5 +1,5 @@
 ---
-name: feature-03-plan-tasks
+name: plan-tasks
 description: Trasformare una spec chiarita in un piano tecnico e una lista di task azionabili. Usare quando l'utente dice "pianifica", "scomponi in task", "fammi un piano di implementazione" e c'è già una spec pronta. Terza fase del workflow feature-driven, prima di implementare.
 ---
 
@@ -17,7 +17,7 @@ Fase 3/8 del workflow. Da spec a lista di lavoro eseguibile.
    - piccolo (< 2h di lavoro)
    - indipendentemente testabile
    - con criterio di "fatto" esplicito
-6. Suggerire di procedere con `/skill:feature-04-analyze` per validare il piano o `/skill:feature-05-implement` per partire.
+6. Suggerire di procedere con `/skill:analyze` per validare il piano o `/skill:implement` per partire.
 
 ## Output atteso
 
@@ -28,4 +28,4 @@ Fase 3/8 del workflow. Da spec a lista di lavoro eseguibile.
 
 - Ogni task deve essere richiudibile (fatto/non fatto), non "lavora su X".
 - Non stimare tempi se non richiesto: la granularità sostituisce la stima.
-- Se emergono ambiguità nella spec, tornare a `/skill:feature-02-clarify`.
+- Se emergono ambiguità nella spec, tornare a `/skill:clarify`.

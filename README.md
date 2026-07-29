@@ -10,17 +10,17 @@ Le skill sono **stack-agnostic**: funzionano per script Python, librerie, CLI to
 
 | # | Skill | Ruolo | Output principale |
 |---|-------|-------|-------------------|
-| 01 | `feature-01-spec` | Definire requisiti + Goals + **Non-Goals** | `spec.md` nel progetto |
-| 02 | `feature-02-clarify` | Risolvere ambiguità nella spec | `spec.md` chiarito |
-| 03 | `feature-03-plan-tasks` | Piano tecnico + task breakdown | `plan.md` + `tasks.md` |
-| 04 | `feature-04-analyze` | Analisi critica del piano | `analysis.md` |
-| 05 | `feature-05-implement` | Scrivere il codice | Codice + `tasks.md` aggiornato |
-| 06 | `feature-06-test` | Test contro criteri di accettazione | Suite verde |
-| 07 | `feature-07-refactor` | Pulire con i test come rete di sicurezza | Codice più leggibile, comportamento invariato |
-| 08 | `feature-08-commit` | Commit strutturati + eventuale PR | Storia git pulita |
+| 01 | `spec` | Definire requisiti + Goals + **Non-Goals** | `spec.md` nel progetto |
+| 02 | `clarify` | Risolvere ambiguità nella spec | `spec.md` chiarito |
+| 03 | `plan-tasks` | Piano tecnico + task breakdown | `plan.md` + `tasks.md` |
+| 04 | `analyze` | Analisi critica del piano | `analysis.md` |
+| 05 | `implement` | Scrivere il codice | Codice + `tasks.md` aggiornato |
+| 06 | `test` | Test contro criteri di accettazione | Suite verde |
+| 07 | `refactor` | Pulire con i test come rete di sicurezza | Codice più leggibile, comportamento invariato |
+| 08 | `commit` | Commit strutturati + eventuale PR | Storia git pulita |
 | ⚠ | `guardrail-scope` | Cross-cutting: Guardarail AI | — |
 
-Ordine tipico: `01 → 02 → 03 → (04) → 05 → 06 → (07) → 08`. Le fasi 04 e 07 sono opzionali.
+Ordine tipico: `spec → clarify → plan-tasks → (analyze) → implement → test → (refactor) → commit`. Le fasi `analyze` e `refactor` sono opzionali.
 
 ---
 
@@ -47,7 +47,7 @@ Esempio (script Python di analisi):
 - [ ] NON aggiungere plot/grafici
 ```
 
-Il file `feature-01-spec/spec.md` contiene esempi di Non-Goals per: script Python, librerie, CLI, servizi backend, pipeline ML, app desktop.
+Il file `spec/spec.md` contiene esempi di Non-Goals per: script Python, librerie, CLI, servizi backend, pipeline ML, app desktop.
 
 ### Guardrail: disciplina dello scope
 
@@ -68,9 +68,9 @@ Le skill sono già installate in `~/.claude/skills/` (per te: `C:\Users\Alessio\
 Per reinstallare o installare in un altro ambiente:
 
 ```bash
-cp -r feature-01-spec feature-02-clarify feature-03-plan-tasks \
-      feature-04-analyze feature-05-implement feature-06-test \
-      feature-07-refactor feature-08-commit guardrail-scope \
+cp -r spec clarify plan-tasks \
+      analyze implement test \
+      refactor commit guardrail-scope \
       ~/.claude/skills/
 ```
 
@@ -87,8 +87,8 @@ Ogni cartella contiene:
 Digita lo slash command:
 
 ```
-/feature-01-spec
-/feature-05-implement
+/spec
+/implement
 /guardrail-scope
 ```
 
@@ -98,14 +98,14 @@ Le skill si attivano da sole in base al `description` YAML. Frasi che le trigger
 
 | Se dici… | Si attiva… |
 |----------|------------|
-| "definisci i requisiti", "scrivi la spec" | `feature-01-spec` |
-| "chiarisci", "cosa manca" | `feature-02-clarify` |
-| "pianifica", "scomponi in task" | `feature-03-plan-tasks` |
-| "analizza", "verifica il piano" | `feature-04-analyze` |
-| "implementa", "scrivi il codice" | `feature-05-implement` |
-| "testa", "scrivi i test" | `feature-06-test` |
-| "refactora", "pulisci il codice" | `feature-07-refactor` |
-| "committa", "apri PR" | `feature-08-commit` |
+| "definisci i requisiti", "scrivi la spec" | `spec` |
+| "chiarisci", "cosa manca" | `clarify` |
+| "pianifica", "scomponi in task" | `plan-tasks` |
+| "analizza", "verifica il piano" | `analyze` |
+| "implementa", "scrivi il codice" | `implement` |
+| "testa", "scrivi i test" | `test` |
+| "refactora", "pulisci il codice" | `refactor` |
+| "committa", "apri PR" | `commit` |
 | "attenzione allo scope", "lavora sui binari" | `guardrail-scope` |
 
 ---
@@ -115,33 +115,33 @@ Le skill si attivano da sole in base al `description` YAML. Frasi che le trigger
 Immagina di dover aggiungere un endpoint di export in un servizio Python esistente.
 
 ```
-> /feature-01-spec voglio esportare gli utenti in CSV via endpoint GET /users/export
+> /spec voglio esportare gli utenti in CSV via endpoint GET /users/export
 
 [AI compila spec.md con Goals + Non-Goals + interfaccia + criteri]
 
 > ok procedi
 
-> /feature-02-clarify
+> /clarify
 
 [AI ti fa 2-3 domande chiuse per risolvere ambiguità e propone Non-Goals aggiuntivi]
 
-> /feature-03-plan-tasks
+> /plan-tasks
 
 [AI ispeziona il codebase, produce plan.md e tasks.md con 4 task]
 
-> /feature-05-implement
+> /implement
 
 [AI implementa task 1..4, tenendo d'occhio i Non-Goals; se emerge un problema fuori scope, lo segnala]
 
-> /feature-06-test
+> /test
 
 [AI scrive test per ogni criterio di accettazione, verifica suite verde]
 
-> /feature-07-refactor  (opzionale)
+> /refactor  (opzionale)
 
 [AI pulisce solo il codice appena scritto, non tocca il resto]
 
-> /feature-08-commit
+> /commit
 
 [AI rilegge il diff riga per riga, propone commit separati per feature e refactor]
 ```
@@ -155,18 +155,18 @@ In qualunque momento puoi dire **"attenzione allo scope"** per invocare esplicit
 ```
 skills/
 ├── README.md                    # questo file
-├── feature-01-spec/
+├── spec/
 │   ├── SKILL.md                 # istruzioni AI
 │   ├── plan.md                  # metodo
 │   ├── spec.md                  # template output (con esempi Non-Goals per stack)
 │   └── tasks.md                 # checklist
-├── feature-02-clarify/
-├── feature-03-plan-tasks/
-├── feature-04-analyze/
-├── feature-05-implement/
-├── feature-06-test/
-├── feature-07-refactor/
-├── feature-08-commit/
+├── clarify/
+├── plan-tasks/
+├── analyze/
+├── implement/
+├── test/
+├── refactor/
+├── commit/
 └── guardrail-scope/
     └── SKILL.md
 ```
@@ -177,7 +177,7 @@ skills/
 
 - **Vocabolario**: adatta i termini della `spec.md` al tuo dominio. Il template è neutro (parla di "consumatori", "interfaccia", "unità di codice") — sostituisci con "endpoint", "comando", "modulo", "componente", ecc. secondo il progetto.
 - **Fasi**: se non ti serve una fase (es. analisi o refactor), saltala. Il workflow non è rigido.
-- **Non-Goals per stack**: `feature-01-spec/spec.md` ha esempi per 6 tipi di software; aggiungi i tuoi se lavori su domini ricorrenti (embedded, mobile, ecc.).
+- **Non-Goals per stack**: `spec/spec.md` ha esempi per 6 tipi di software; aggiungi i tuoi se lavori su domini ricorrenti (embedded, mobile, ecc.).
 - **Memoria persistente**: il guardrail è già registrato nel sistema di memoria di Claude Code, quindi si applica **in tutte le sessioni**, anche fuori da questo workflow.
 
 ---

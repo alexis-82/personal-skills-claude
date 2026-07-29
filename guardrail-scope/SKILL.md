@@ -19,7 +19,7 @@ Se esiste `spec.md` con una sezione **Non-Goals**, quella è la fonte di verità
 2. Per ogni modifica pianificata, chiedersi: "questa modifica viola un Non-Goal?"
 3. Se sì → **fermarsi**, non farla, segnalarlo all'utente.
 
-I Non-Goals sono un **contratto** già firmato dall'utente in fase spec: non vanno rinegoziati implicitamente durante l'implementazione. Se un Non-Goal sembra dover cambiare, tornare a `/skill:feature-01-spec` o `/skill:feature-02-clarify` e aggiornarlo esplicitamente.
+I Non-Goals sono un **contratto** già firmato dall'utente in fase spec: non vanno rinegoziati implicitamente durante l'implementazione. Se un Non-Goal sembra dover cambiare, tornare a `/skill:spec` o `/skill:clarify` e aggiornarlo esplicitamente.
 
 ## Check n°2: cosa NON fare (mai, senza autorizzazione esplicita)
 
@@ -58,7 +58,7 @@ Se anche una sola risposta è ambigua, il commit non è pronto.
 
 ## Applicazione nelle fasi del workflow
 
-- `feature-05-implement`: implementa i task, non altro.
-- `feature-06-test`: aggiungi test per la spec corrente, non riscrivere test esistenti.
-- `feature-07-refactor`: refactor sì, ma limitato allo scope dichiarato dall'utente; anche il refactor ha binari.
-- `feature-08-commit`: il diff deve essere leggibile e ogni riga giustificabile.
+- `implement`: implementa i task, non altro.
+- `test`: aggiungi test per la spec corrente, non riscrivere test esistenti.
+- `refactor`: refactor sì, ma limitato allo scope dichiarato dall'utente; anche il refactor ha binari.
+- `commit`: il diff deve essere leggibile e ogni riga giustificabile.

@@ -1,5 +1,5 @@
 ---
-name: feature-04-analyze
+name: analyze
 description: Analisi critica di un piano tecnico, del codice esistente o di un problema prima di implementare. Usare quando l'utente dice "analizza", "verifica il piano", "cerca rischi", "trova bug" o vuole una revisione preliminare. Quarta fase del workflow feature-driven, opzionale ma consigliata per feature complesse.
 ---
 
@@ -17,7 +17,7 @@ Fase 4/8 del workflow. Trova i problemi prima che diventino costosi.
    - **Sicurezza**: input non fidati, autenticazione, autorizzazione, secret, injection.
    - **Prestazioni**: query N+1, loop nested, chiamate di rete non necessarie.
 4. Produrre `analysis.md` nel progetto con findings elencati, ognuno con severità (blocker/major/minor) e file:linea.
-5. Se ci sono blocker, tornare a `/skill:feature-03-plan-tasks` per aggiornare il piano.
+5. Se ci sono blocker, tornare a `/skill:plan-tasks` per aggiornare il piano.
 
 ## Output atteso
 
