@@ -1,0 +1,31 @@
+---
+name: feature-03-plan-tasks
+description: Trasformare una spec chiarita in un piano tecnico e una lista di task azionabili. Usare quando l'utente dice "pianifica", "scomponi in task", "fammi un piano di implementazione" e c'è già una spec pronta. Terza fase del workflow feature-driven, prima di implementare.
+---
+
+# Piano tecnico e task breakdown
+
+Fase 3/8 del workflow. Da spec a lista di lavoro eseguibile.
+
+## Cosa fare
+
+1. Leggere `plan.md`, `spec.md`, `tasks.md` di questa cartella come riferimento metodologico.
+2. Leggere `spec.md` del progetto (output della fase 01/02).
+3. Ispezionare il codebase per capire architettura esistente, stack, convenzioni (Glob/Grep sui file principali).
+4. Produrre `plan.md` nel progetto con: approccio tecnico, file da toccare, ordine di implementazione, rischi.
+5. Produrre `tasks.md` nel progetto con task numerati, ciascuno:
+   - piccolo (< 2h di lavoro)
+   - indipendentemente testabile
+   - con criterio di "fatto" esplicito
+6. Suggerire di procedere con `/skill:feature-04-analyze` per validare il piano o `/skill:feature-05-implement` per partire.
+
+## Output atteso
+
+- `plan.md` del progetto: approccio + rischi + ordine.
+- `tasks.md` del progetto: checklist `- [ ] Task N: <descrizione> — DoD: <criterio>`.
+
+## Regole
+
+- Ogni task deve essere richiudibile (fatto/non fatto), non "lavora su X".
+- Non stimare tempi se non richiesto: la granularità sostituisce la stima.
+- Se emergono ambiguità nella spec, tornare a `/skill:feature-02-clarify`.
