@@ -63,15 +63,13 @@ Se durante il lavoro emergono problemi fuori scope, l'AI li **segnala** ma non l
 
 ## Installazione
 
-Le skill sono già installate in `~/.claude/skills/` (per te: `C:\Users\Alessio\.claude\skills\`).
+Le skill vengono installate in `~/.claude/skills/` (per te: `C:\Users\Name\.claude\skills\`).
 
-Per reinstallare o installare in un altro ambiente:
+Installazione da Powershell:
 
-```bash
-cp -r spec clarify plan-tasks \
-      analyze implement test \
-      refactor commit guardrail-scope \
-      ~/.claude/skills/
+```powershell
+Copy-Item -Recurse spec, clarify, plan-tasks, analyze, implement, test, refactor, commit, guardrail-scope "$env:USERPROFILE\.claude\skills\"
+
 ```
 
 Ogni cartella contiene:
