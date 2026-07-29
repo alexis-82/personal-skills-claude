@@ -6,7 +6,7 @@ Le skill sono **stack-agnostic**: funzionano per script Python, librerie, CLI to
 
 ---
 
-## Le 9 skill
+## Le 9 skill, seguire il workflow in questo ordine
 
 | # | Skill | Ruolo | Output principale |
 |---|-------|-------|-------------------|
@@ -63,18 +63,38 @@ Se durante il lavoro emergono problemi fuori scope, l'AI li **segnala** ma non l
 
 ## Installazione
 
-Le skill vengono installate in `~/.claude/skills/` (per te: `C:\Users\Name\.claude\skills\`).
+Le skill vanno installate in `~/.claude/skills/` (su Windows: `C:\Users\<utente>\.claude\skills\`). Nel repo trovi due script che copiano le 9 cartelle nella destinazione, sovrascrivendo eventuali versioni precedenti con lo stesso nome.
 
-Installazione da Powershell:
+### Windows (PowerShell)
 
 ```powershell
-Copy-Item -Recurse spec, clarify, plan-tasks, analyze, implement, test, refactor, commit, guardrail-scope "$env:USERPROFILE\.claude\skills\"
-
+.\install.ps1
 ```
 
-Ogni cartella contiene:
+Se PowerShell blocca l'esecuzione con un errore di execution policy, sbloccalo solo per questa sessione:
+
+```powershell
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+.\install.ps1
+```
+
+### Linux / macOS (bash)
+
+```bash
+./install.sh
+```
+
+Se serve, rendi lo script eseguibile una volta sola: `chmod +x install.sh`.
+
+### Cosa fanno gli script
+
+- Creano `~/.claude/skills/` se manca.
+- Copiano le 9 skill (`spec`, `clarify`, `plan-tasks`, `analyze`, `implement`, `test`, `refactor`, `commit`, `guardrail-scope`), sovrascrivendo eventuali versioni precedenti con lo stesso nome.
+- Al termine, riavvia Claude Code per caricare le skill aggiornate.
+
+Ogni cartella skill contiene:
 - `SKILL.md` — istruzioni per l'AI (con frontmatter YAML)
-- `plan.md`, `spec.md`, `tasks.md` — template e checklist di supporto
+- `plan.md`, `spec.md`, `tasks.md` — template e checklist di supporto (dove applicabile)
 
 ---
 
