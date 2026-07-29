@@ -155,8 +155,6 @@ In qualunque momento puoi dire **"attenzione allo scope"** per invocare esplicit
 ```
 skills/
 ├── README.md                    # questo file
-├── skills.txt                   # elenco skill
-├── script.py                    # generatore originale (legacy)
 ├── feature-01-spec/
 │   ├── SKILL.md                 # istruzioni AI
 │   ├── plan.md                  # metodo
