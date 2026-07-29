@@ -11,7 +11,7 @@ Le skill sono **stack-agnostic**: funzionano per script Python, librerie, CLI to
 | # | Skill | Ruolo | Output principale |
 |---|-------|-------|-------------------|
 | 01 | `spec` | Definire requisiti + Goals + **Non-Goals** | `spec.md` nel progetto |
-| 02 | `clarify` | Risolvere ambiguità nella spec | `spec.md` chiarito |
+| 02 | `clarify` | Brainstorming interattivo (stack, architettura, alternative) + risoluzione ambiguità | `spec.md` chiarito con "Decisioni prese" |
 | 03 | `plan-tasks` | Piano tecnico + task breakdown | `plan.md` + `tasks.md` |
 | 04 | `analyze` | Analisi critica del piano | `analysis.md` |
 | 05 | `implement` | Scrivere il codice | Codice + `tasks.md` aggiornato |
@@ -117,7 +117,7 @@ Le skill si attivano da sole in base al `description` YAML. Frasi che le trigger
 | Se dici… | Si attiva… |
 |----------|------------|
 | "definisci i requisiti", "scrivi la spec" | `spec` |
-| "chiarisci", "cosa manca" | `clarify` |
+| "chiarisci", "cosa manca", "brainstorma", "esploriamo le opzioni", "quale stack" | `clarify` |
 | "pianifica", "scomponi in task" | `plan-tasks` |
 | "analizza", "verifica il piano" | `analyze` |
 | "implementa", "scrivi il codice" | `implement` |
@@ -141,7 +141,11 @@ Immagina di dover aggiungere un endpoint di export in un servizio Python esisten
 
 > /clarify
 
-[AI ti fa 2-3 domande chiuse per risolvere ambiguità e propone Non-Goals aggiuntivi]
+[AI apre un brainstorming: presenta 2-4 alternative per i punti decisionali
+ (es. formato CSV via streaming vs in-memory, autenticazione richiesta o no,
+ paginazione o dump completo) con pro/contro concreti, chiede a te di scegliere.
+ Poi 2-3 domande chiuse per le ambiguità puntuali e propone Non-Goals aggiuntivi.
+ Aggiunge la sezione "Decisioni prese" a spec.md]
 
 > /plan-tasks
 
