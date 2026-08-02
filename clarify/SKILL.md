@@ -1,6 +1,6 @@
 ---
 name: clarify
-description: Chiarire una spec attraverso un dialogo di brainstorming con lo sviluppatore — esplorare alternative tecniche, stack, architettura, approcci e trade-off, poi risolvere le ambiguità residue. Usare quando l'utente dice "chiarisci", "brainstorma", "esploriamo le opzioni", "quale stack usare", "quali alternative", "cosa manca", "questa spec è vaga", o quando `spec.md` contiene marker `[?]` / TODO / punti ambigui. Seconda fase del workflow feature-driven, tra spec e plan-tasks.
+description: Chiarire una spec attraverso un dialogo di brainstorming con lo sviluppatore — esplorare alternative tecniche, stack, architettura, approcci e trade-off, poi risolvere le ambiguità residue. Usare quando l'utente dice "chiarisci", "brainstorma", "esploriamo le opzioni", "quale stack usare", "quali alternative", "cosa manca", "questa spec è vaga", o quando `.claude/spec.md` contiene marker `[?]` / TODO / punti ambigui. Seconda fase del workflow feature-driven, tra spec e plan-tasks.
 ---
 
 # Chiarimento requisiti + Brainstorming
@@ -17,7 +17,7 @@ Il brainstorming **non è opzionale**: anche se la spec sembra chiara, ci sono q
 ### Fase A — Analisi (silenziosa)
 
 1. Leggere `plan.md`, `spec.md` (template), `tasks.md` (checklist) di questa cartella.
-2. Aprire `spec.md` del progetto e ispezionare rapidamente il codebase (stack esistente, convenzioni, dipendenze già presenti) per capire i vincoli reali.
+2. Aprire `.claude/spec.md` del progetto e ispezionare rapidamente il codebase (stack esistente, convenzioni, dipendenze già presenti) per capire i vincoli reali.
 3. Identificare **due categorie** di punti aperti:
    - **Ambiguità puntuali**: marker `[?]`, TODO, frasi vaghe ("gestire correttamente", "ottimizzato", "user-friendly"), assunzioni non dichiarate.
    - **Punti decisionali**: scelte con più soluzioni valide che la spec non ha ancora vincolato — es. quale libreria/framework, quale storage, quale pattern architetturale, come modellare i dati, dove tracciare i confini di responsabilità, come gestire concorrenza/errori, quale strategia di test.
@@ -51,7 +51,7 @@ Non serve toccarli tutti — solo quelli **realmente aperti** per questa feature
 
 6. Per ogni **ambiguità puntuale** residua (non decisionale) formulare **una** domanda chiusa (sì/no o opzioni multiple) — mai domande aperte a cascata. Usare `AskUserQuestion`.
 7. Verificare che la sezione **Non-Goals** esista e sia specifica. Se manca o è vaga, proporre 3-5 Non-Goals candidati dedotti dal contesto e dalle decisioni prese in brainstorming, e chiedere conferma — è il momento giusto per fissare i binari.
-8. Aggiornare `spec.md` del progetto con:
+8. Aggiornare `.claude/spec.md` del progetto con:
    - Nuova sezione **"Decisioni prese"** con: decisione, alternative valutate, motivazione (1-2 righe).
    - Risposte alle domande e rimozione dei marker `[?]` risolti.
    - Non-Goals confermati/aggiunti.
@@ -59,7 +59,7 @@ Non serve toccarli tutti — solo quelli **realmente aperti** per questa feature
 
 ## Output atteso
 
-`spec.md` del progetto con:
+`.claude/spec.md` del progetto con:
 - Nessun marker `[?]` non risolto (o marcato esplicitamente `[?risolvere-dopo]`).
 - Sezione **"Decisioni prese"** che documenta le scelte fatte in brainstorming, con motivazione breve e alternative scartate.
 - Non-Goals specifici e confermati.

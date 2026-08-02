@@ -13,7 +13,7 @@ L'AI lavora su binari stretti. Modifica **solo** ciò che è strettamente necess
 
 ## Check n°1: i Non-Goals dichiarati
 
-Se esiste `spec.md` con una sezione **Non-Goals**, quella è la fonte di verità **prioritaria** su cosa NON fare. Prima di qualunque modifica:
+Se esiste `.claude/spec.md` con una sezione **Non-Goals**, quella è la fonte di verità **prioritaria** su cosa NON fare. Prima di qualunque modifica:
 
 1. Rileggere i Non-Goals.
 2. Per ogni modifica pianificata, chiedersi: "questa modifica viola un Non-Goal?"
@@ -52,7 +52,7 @@ Se un cambio **fuori scope** è tecnicamente **necessario** perché quello **den
 Doppia domanda su **ogni riga cambiata** nel diff:
 
 1. "Questa riga è strettamente necessaria al task richiesto?" — se no, rimuovila.
-2. "Questa riga viola un Non-Goal dichiarato in `spec.md`?" — se sì, rimuovila e segnala.
+2. "Questa riga viola un Non-Goal dichiarato in `.claude/spec.md`?" — se sì, rimuovila e segnala.
 
 Se anche una sola risposta è ambigua, il commit non è pronto.
 

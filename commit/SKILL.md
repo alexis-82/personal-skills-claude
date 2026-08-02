@@ -24,7 +24,7 @@ Fase 8/8 del workflow. Consolida il lavoro (implementazione + test + refactor) i
 
 ## Output atteso
 
-Commit creati (feature + eventuale refactor separati), git tree pulito, `tasks.md` con tutti i task marcati `- [x]`, eventuale PR aperta.
+Commit creati (feature + eventuale refactor separati), git tree pulito, `.claude/tasks.md` con tutti i task marcati `- [x]`, eventuale PR aperta.
 
 ## Regole
 

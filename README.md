@@ -10,11 +10,11 @@ Le skill sono **stack-agnostic**: funzionano per script Python, librerie, CLI to
 
 | # | Skill | Ruolo | Output principale |
 |---|-------|-------|-------------------|
-| 01 | `spec` | Definire requisiti + Goals + **Non-Goals** | `spec.md` nel progetto |
+| 01 | `spec` | Definire requisiti + Goals + **Non-Goals** | `.claude/spec.md` nel progetto |
 | 02 | `clarify` | Brainstorming interattivo (stack, architettura, alternative) + risoluzione ambiguità | `spec.md` chiarito con "Decisioni prese" |
-| 03 | `plan-tasks` | Piano tecnico + task breakdown | `plan.md` + `tasks.md` |
-| 04 | `analyze` | Analisi critica del piano | `analysis.md` |
-| 05 | `implement` | Scrivere il codice | Codice + `tasks.md` aggiornato |
+| 03 | `plan-tasks` | Piano tecnico + task breakdown | `.claude/plan.md` + `.claude/tasks.md` |
+| 04 | `analyze` | Analisi critica del piano | `.claude/analysis.md` |
+| 05 | `implement` | Scrivere il codice | Codice + `.claude/tasks.md` aggiornato |
 | 06 | `test` | Test contro criteri di accettazione | Suite verde |
 | 07 | `refactor` | Pulire con i test come rete di sicurezza | Codice più leggibile, comportamento invariato |
 | 08 | `commit` | Commit strutturati + eventuale PR | Storia git pulita |
@@ -28,7 +28,7 @@ Ordine tipico: `spec → clarify → plan-tasks → (analyze) → implement → 
 
 ### Goals / Non-Goals
 
-Ogni `spec.md` contiene due sezioni obbligatorie:
+Ogni `.claude/spec.md` contiene due sezioni obbligatorie:
 
 - **Goals** — 3-7 bullet verificabili con cosa la feature **deve** fare.
 - **Non-Goals** — 3-7 bullet con cosa la feature **NON** deve fare, esplicitamente.
@@ -47,13 +47,13 @@ Esempio (script Python di analisi):
 - [ ] NON aggiungere plot/grafici
 ```
 
-Il file `spec/spec.md` contiene esempi di Non-Goals per: script Python, librerie, CLI, servizi backend, pipeline ML, app desktop.
+Il file `spec/spec.md` (template nella cartella della skill) contiene esempi di Non-Goals per: script Python, librerie, CLI, servizi backend, pipeline ML, app desktop.
 
 ### Guardrail: disciplina dello scope
 
 `guardrail-scope` è una skill trasversale che vincola l'AI a modificare **solo** il codice strettamente necessario alla richiesta. Regole:
 
-1. **Check n°1** — se esiste `spec.md` con Non-Goals, quelli sono la fonte di verità prioritaria.
+1. **Check n°1** — se esiste `.claude/spec.md` con Non-Goals, quelli sono la fonte di verità prioritaria.
 2. **Check n°2** — anche in loro assenza, no pulizie opportunistiche, no riformattazioni, no rinomine collaterali, no refactor spontanei.
 3. **Auto-verifica pre-commit** — ogni riga del diff deve essere motivabile con il task richiesto. Se no, va rimossa.
 
@@ -149,7 +149,7 @@ Immagina di dover aggiungere un endpoint di export in un servizio Python esisten
 
 > /plan-tasks
 
-[AI ispeziona il codebase, produce plan.md e tasks.md con 4 task]
+[AI ispeziona il codebase, produce .claude/plan.md e .claude/tasks.md con 4 task]
 
 > /implement
 
@@ -207,5 +207,5 @@ skills/
 ## Note
 
 - Le skill sono in italiano ma il codice generato segue le convenzioni del progetto (inglese se il codebase è in inglese).
-- I file `plan.md` / `tasks.md` nelle cartelle skill sono **template di riferimento**, non vengono modificati durante l'uso. I file di lavoro veri vivono nella cartella del progetto.
+- I file `plan.md` / `tasks.md` nelle cartelle skill sono **template di riferimento**, non vengono modificati durante l'uso. I file di lavoro veri vivono nel progetto sotto `.claude/` (`spec.md`, `plan.md`, `tasks.md`, `analysis.md` e l'eventuale `test-report.md`).
 - La skill `guardrail-scope` è pensata anche per essere invocata fuori dal workflow feature-driven, in qualunque task che tocchi codice.

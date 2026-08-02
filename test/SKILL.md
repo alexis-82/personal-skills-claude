@@ -10,7 +10,7 @@ Fase 6/8 del workflow. Verifica che l'implementazione soddisfi la spec.
 ## Cosa fare
 
 1. Leggere `plan.md`, `spec.md`, `tasks.md` di questa cartella per il metodo.
-2. Rileggere i **criteri di accettazione** in `spec.md` del progetto.
+2. Rileggere i **criteri di accettazione** in `.claude/spec.md` del progetto.
 3. Per ogni criterio scrivere almeno un test, scegliendo il livello adatto al tipo di software:
    - **Unit test** per la logica pura (una funzione, un metodo, una trasformazione).
    - **Integration test** per l'interazione tra unità reali (moduli, subprocess, I/O, servizi esterni "veri"). Mockare solo dipendenze genuinamente non controllabili in test (rete esterna a pagamento, hardware, tempo).
@@ -18,7 +18,7 @@ Fase 6/8 del workflow. Verifica che l'implementazione soddisfi la spec.
    - **Edge case**: input vuoti, valori limite, errori attesi, encoding, timezone, precisione numerica se rilevante.
 4. Eseguire l'intera suite (non solo i nuovi test) per catturare regressioni.
 5. Se ci sono fallimenti: capire causa radice, non silenziare.
-6. Produrre `test-report.md` opzionale con esito, o riportare direttamente in chat.
+6. Produrre `.claude/test-report.md` opzionale con esito, o riportare direttamente in chat.
 7. Con suite verde, suggerire `/skill:refactor` per pulire prima del commit, oppure `/skill:commit` per andare diretti al consolidamento.
 
 ## Output atteso

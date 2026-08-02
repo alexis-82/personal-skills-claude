@@ -10,18 +10,18 @@ Fase 4/8 del workflow. Trova i problemi prima che diventino costosi.
 ## Cosa fare
 
 1. Leggere `plan.md`, `spec.md`, `tasks.md` di questa cartella per il metodo.
-2. Leggere spec + plan + tasks del progetto.
+2. Leggere `.claude/spec.md`, `.claude/plan.md`, `.claude/tasks.md` del progetto.
 3. Analizzare su 4 assi:
    - **Correttezza**: il piano copre tutti i criteri di accettazione della spec?
    - **Impatto**: quali parti del codice esistente vengono toccate? Regressioni possibili?
    - **Sicurezza**: input non fidati, autenticazione, autorizzazione, secret, injection.
    - **Prestazioni**: query N+1, loop nested, chiamate di rete non necessarie.
-4. Produrre `analysis.md` nel progetto con findings elencati, ognuno con severità (blocker/major/minor) e file:linea.
+4. Produrre `.claude/analysis.md` nel progetto con findings elencati, ognuno con severità (blocker/major/minor) e file:linea.
 5. Se ci sono blocker, tornare a `/skill:plan-tasks` per aggiornare il piano.
 
 ## Output atteso
 
-`analysis.md` nel progetto con findings numerati e severità, oppure dichiarazione esplicita "nessun problema rilevato" con giustificazione.
+`.claude/analysis.md` nel progetto con findings numerati e severità, oppure dichiarazione esplicita "nessun problema rilevato" con giustificazione.
 
 ## Regole
 

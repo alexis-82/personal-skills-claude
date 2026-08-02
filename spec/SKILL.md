@@ -11,13 +11,13 @@ Fase 1/8 del workflow. Trasforma un'idea in una specifica azionabile con confini
 
 1. Leggere `plan.md` per il metodo, `spec.md` come template di output, `tasks.md` per la checklist operativa.
 2. Chiedere all'utente (o dedurre dal contesto) chi sono gli utenti, cosa devono ottenere e con quali vincoli.
-3. Compilare `spec.md` nella cartella corrente del progetto (non in questa cartella skill) con **tutte** le sezioni sotto, incluse Goals e Non-Goals.
+3. Compilare `.claude/spec.md` nella cartella del progetto (non in questa cartella skill, non nella root). Creare la cartella `.claude/` se non esiste. Il file deve contenere **tutte** le sezioni sotto, incluse Goals e Non-Goals.
 4. Rileggere Non-Goals con l'utente prima di procedere — è la sezione più importante per prevenire scope creep.
 5. Al termine, suggerire di passare a `/skill:clarify` se restano ambiguità, altrimenti a `/skill:plan-tasks`.
 
 ## Output atteso
 
-Un file `spec.md` nel progetto con queste sezioni **obbligatorie**:
+Un file `.claude/spec.md` nel progetto con queste sezioni **obbligatorie**:
 
 - **Obiettivo** — una frase che riassume perché questa feature esiste.
 - **Goals** — 3-7 bullet con cosa la feature **deve** fare. Ogni goal deve essere verificabile (superato/fallito), non aspirazionale.
