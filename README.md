@@ -6,6 +6,26 @@ Le skill sono **stack-agnostic**: funzionano per script Python, librerie, CLI to
 
 ---
 
+## Indice
+
+- [Le 10 skill, seguire il workflow in questo ordine](#le-10-skill-seguire-il-workflow-in-questo-ordine)
+- [Concetti chiave](#concetti-chiave)
+  - [Goals / Non-Goals](#goals--non-goals)
+  - [Guardrail: disciplina dello scope](#guardrail-disciplina-dello-scope)
+- [Installazione](#installazione)
+  - [Windows (PowerShell)](#windows-powershell)
+  - [Linux / macOS (bash)](#linux--macos-bash)
+  - [Cosa fanno gli script](#cosa-fanno-gli-script)
+- [Come si usano](#come-si-usano)
+  - [Invocazione esplicita](#invocazione-esplicita)
+  - [Attivazione automatica](#attivazione-automatica)
+- [Esempio di flusso completo](#esempio-di-flusso-completo)
+- [Struttura file](#struttura-file)
+- [Personalizzazione](#personalizzazione)
+- [Note](#note)
+
+---
+
 ## Le 10 skill, seguire il workflow in questo ordine
 
 | # | Skill | Ruolo | Output principale |
