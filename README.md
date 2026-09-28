@@ -236,5 +236,6 @@ skills/
 ## Note
 
 - Le skill sono in italiano ma il codice generato segue le convenzioni del progetto (inglese se il codebase è in inglese).
-- I file `plan.md` / `tasks.md` nelle cartelle skill sono **template di riferimento**, non vengono modificati durante l'uso. I file di lavoro veri vivono nel progetto sotto `.claude/` (`spec.md`, `plan.md`, `tasks.md`, `analysis.md` e l'eventuale `test-report.md`).
+- I file `plan.md` / `spec.md` / `tasks.md` nelle cartelle skill sono **template di riferimento**, non vengono modificati durante l'uso. I file di lavoro veri vivono **sempre** nel progetto sotto `.claude/` (`spec.md`, `plan.md`, `tasks.md`, `analysis.md`, `review.md` e l'eventuale `test-report.md`). Mai nella root del progetto, mai nella cartella della skill — regola rafforzata dal Check n°3 di `guardrail-scope`.
+- Se dopo una sessione trovi uno di questi file nella root del progetto (residuo da versioni precedenti delle skill), spostalo dentro `.claude/`: le skill ora sanno gestirlo, ma un file omonimo in root può confondere le fasi successive.
 - La skill `guardrail-scope` è pensata anche per essere invocata fuori dal workflow feature-driven, in qualunque task che tocchi codice.

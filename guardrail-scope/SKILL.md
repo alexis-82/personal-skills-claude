@@ -37,6 +37,27 @@ Anche in assenza di Non-Goals espliciti, valgono queste regole di default:
 - Cambiare stile del codice (spazi, virgolette, semicolon) su file toccati di passaggio
 - Aggiungere test/documentazione per codice non nello scope
 
+## Check n°3: dove finiscono i file di workflow (regola dura)
+
+Tutti i file prodotti dalle skill di questo workflow vivono **esclusivamente** in `.claude/` nella root del progetto:
+
+- `.claude/spec.md`
+- `.claude/plan.md`
+- `.claude/tasks.md`
+- `.claude/analysis.md`
+- `.claude/review.md`
+- `.claude/test-report.md`
+
+Regole:
+
+1. **Mai** creare uno di questi file nella root del progetto.
+2. **Mai** creare uno di questi file nella cartella della skill (`~/.claude/skills/<nome>/`).
+3. Se `.claude/` non esiste nella root del progetto, crearla **prima** di scrivere il primo file.
+4. Se durante il lavoro trovi uno di questi file per errore nella root del progetto (residui da sessioni precedenti), **spostalo** (git mv se tracciato, mv altrimenti) in `.claude/` prima di procedere; non duplicarlo.
+5. Il file `.claude/` è parte dei metadati del progetto, non dell'output finale: valuta con l'utente se andare in `.gitignore` o essere versionato — non è una decisione da prendere in autonomia.
+
+Confusione da evitare: dentro ogni cartella skill (`~/.claude/skills/spec/`, `~/.claude/skills/plan-tasks/`, ecc.) esistono file `plan.md`, `spec.md`, `tasks.md` — quelli sono **template/checklist di riferimento** della skill, si **leggono** ma non si toccano. I file di lavoro veri stanno **solo** in `.claude/` del progetto corrente.
+
 ## Cosa fare quando si trova un problema fuori scope
 
 1. **Non toccarlo.**

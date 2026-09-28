@@ -7,6 +7,17 @@ description: Migliorare la qualità del codice appena implementato senza cambiar
 
 Fase 8/9 del workflow. Migliora la struttura mantenendo il comportamento, prima del commit finale.
 
+> **⚠ Output path (regola dura)**
+> Tutti i file di lavoro di questa skill vanno **esclusivamente** in `.claude/` nella root del progetto:
+> `.claude/spec.md`, `.claude/plan.md`, `.claude/tasks.md`, `.claude/analysis.md`, `.claude/review.md`, `.claude/test-report.md`.
+> **Mai** nella root del progetto. **Mai** nella cartella della skill (`~/.claude/skills/...`).
+>
+> **Prima di scrivere il primo file, obbligatorio**:
+> 1. Se `.claude/` non esiste nella root del progetto, crearla.
+> 2. Se trovi già uno di questi file nella **root del progetto** (residuo da sessioni precedenti), **spostalo** in `.claude/` (`git mv` se tracciato, `mv` altrimenti) prima di procedere — non duplicarlo, non ignorarlo, non ricrearne una copia.
+>
+> Nota: dentro la cartella di questa skill esistono `plan.md`/`spec.md`/`tasks.md` — sono **template di riferimento**, si leggono ma non si toccano. I file di lavoro veri stanno solo in `.claude/` del progetto.
+
 ## Perché prima del commit
 
 Con i test verdi (fase 06) hai la rete di sicurezza per pulire il codice. Fare refactor **prima** del commit ha due vantaggi:

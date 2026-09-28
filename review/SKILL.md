@@ -7,6 +7,17 @@ description: Revisione critica del codice appena implementato — correttezza, e
 
 Fase 7/9 del workflow. Trova problemi nel **codice implementato** prima che finiscano in un commit.
 
+> **⚠ Output path (regola dura)**
+> Tutti i file di lavoro di questa skill vanno **esclusivamente** in `.claude/` nella root del progetto:
+> `.claude/spec.md`, `.claude/plan.md`, `.claude/tasks.md`, `.claude/analysis.md`, `.claude/review.md`, `.claude/test-report.md`.
+> **Mai** nella root del progetto. **Mai** nella cartella della skill (`~/.claude/skills/...`).
+>
+> **Prima di scrivere il primo file, obbligatorio**:
+> 1. Se `.claude/` non esiste nella root del progetto, crearla.
+> 2. Se trovi già uno di questi file nella **root del progetto** (residuo da sessioni precedenti), **spostalo** in `.claude/` (`git mv` se tracciato, `mv` altrimenti) prima di procedere — non duplicarlo, non ignorarlo, non ricrearne una copia.
+>
+> Nota: dentro la cartella di questa skill esistono `plan.md`/`spec.md`/`tasks.md` — sono **template di riferimento**, si leggono ma non si toccano. I file di lavoro veri stanno solo in `.claude/` del progetto.
+
 ## Differenza con `analyze` (fase 04)
 
 - `analyze` esamina il **piano** prima dell'implementazione — ipotesi su cosa potrebbe andare storto.

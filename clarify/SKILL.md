@@ -7,6 +7,17 @@ description: Chiarire una spec attraverso un dialogo di brainstorming con lo svi
 
 Fase 2/9 del workflow. Due obiettivi intrecciati:
 
+> **⚠ Output path (regola dura)**
+> Tutti i file di lavoro di questa skill vanno **esclusivamente** in `.claude/` nella root del progetto:
+> `.claude/spec.md`, `.claude/plan.md`, `.claude/tasks.md`, `.claude/analysis.md`, `.claude/review.md`, `.claude/test-report.md`.
+> **Mai** nella root del progetto. **Mai** nella cartella della skill (`~/.claude/skills/...`).
+>
+> **Prima di scrivere il primo file, obbligatorio**:
+> 1. Se `.claude/` non esiste nella root del progetto, crearla.
+> 2. Se trovi già uno di questi file nella **root del progetto** (residuo da sessioni precedenti), **spostalo** in `.claude/` (`git mv` se tracciato, `mv` altrimenti) prima di procedere — non duplicarlo, non ignorarlo, non ricrearne una copia.
+>
+> Nota: dentro la cartella di questa skill esistono `plan.md`/`spec.md`/`tasks.md` — sono **template di riferimento**, si leggono ma non si toccano. I file di lavoro veri stanno solo in `.claude/` del progetto.
+
 1. **Brainstorming** — dialogo aperto e bidirezionale per esplorare alternative (stack, architettura, approcci, trade-off) prima che qualunque decisione venga cementata nel piano.
 2. **Convergenza** — trasformare le esplorazioni in decisioni scritte e risolvere le ambiguità puntuali residue.
 
