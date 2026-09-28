@@ -1,11 +1,11 @@
 ---
 name: commit
-description: Creare commit ben strutturati e opzionalmente aprire una pull request per una funzionalità completata, testata ed eventualmente refactorata. Usare quando l'utente dice "committa", "fai il commit", "apri PR" a chiusura del ciclo di lavoro. Ottava e ultima fase del workflow feature-driven.
+description: Creare commit ben strutturati e opzionalmente aprire una pull request per una funzionalità completata, testata ed eventualmente refactorata. Usare quando l'utente dice "committa", "fai il commit", "apri PR" a chiusura del ciclo di lavoro. Nona e ultima fase del workflow feature-driven.
 ---
 
 # Commit e pull request
 
-Fase 8/8 del workflow. Consolida il lavoro (implementazione + test + refactor) in git in modo revisionabile.
+Fase 9/9 del workflow. Consolida il lavoro (implementazione + test + refactor) in git in modo revisionabile.
 
 ## Cosa fare
 
@@ -28,7 +28,7 @@ Commit creati (feature + eventuale refactor separati), git tree pulito, `.claude
 
 ## Regole
 
-- **[GUARDRAIL SCOPE]** Prima di committare, rileggi il diff riga per riga: ogni modifica deve essere motivabile con il task richiesto. Se una riga non serve, rimuovila. Vedi `/skill:guardrail-scope`.
+- **[GUARDRAIL SCOPE]** Prima di committare, rileggi il diff riga per riga: ogni modifica deve essere motivabile con il task richiesto. Se una riga non serve, rimuovila. Vedi `/guardrail-scope`.
 - Mai `git add -A` alla cieca — nomi di file espliciti o `git status` prima.
 - Mai `--no-verify`, `--force`, `reset --hard` senza richiesta esplicita.
 - Se un hook pre-commit fallisce, correggere la causa e fare un **nuovo** commit, non `--amend`.

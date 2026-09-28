@@ -19,7 +19,7 @@ Se esiste `.claude/spec.md` con una sezione **Non-Goals**, quella è la fonte di
 2. Per ogni modifica pianificata, chiedersi: "questa modifica viola un Non-Goal?"
 3. Se sì → **fermarsi**, non farla, segnalarlo all'utente.
 
-I Non-Goals sono un **contratto** già firmato dall'utente in fase spec: non vanno rinegoziati implicitamente durante l'implementazione. Se un Non-Goal sembra dover cambiare, tornare a `/skill:spec` o `/skill:clarify` e aggiornarlo esplicitamente.
+I Non-Goals sono un **contratto** già firmato dall'utente in fase spec: non vanno rinegoziati implicitamente durante l'implementazione. Se un Non-Goal sembra dover cambiare, tornare a `/spec` o `/clarify` e aggiornarlo esplicitamente.
 
 ## Check n°2: cosa NON fare (mai, senza autorizzazione esplicita)
 

@@ -5,7 +5,7 @@ description: Analisi critica di un piano tecnico, del codice esistente o di un p
 
 # Analisi critica
 
-Fase 4/8 del workflow. Trova i problemi prima che diventino costosi.
+Fase 4/9 del workflow. Trova i problemi prima che diventino costosi.
 
 ## Cosa fare
 
@@ -17,7 +17,7 @@ Fase 4/8 del workflow. Trova i problemi prima che diventino costosi.
    - **Sicurezza**: input non fidati, autenticazione, autorizzazione, secret, injection.
    - **Prestazioni**: query N+1, loop nested, chiamate di rete non necessarie.
 4. Produrre `.claude/analysis.md` nel progetto con findings elencati, ognuno con severità (blocker/major/minor) e file:linea.
-5. Se ci sono blocker, tornare a `/skill:plan-tasks` per aggiornare il piano.
+5. Se ci sono blocker, tornare a `/plan-tasks` per aggiornare il piano.
 
 ## Output atteso
 

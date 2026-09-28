@@ -11,6 +11,7 @@ SKILLS=(
     analyze
     implement
     test
+    review
     refactor
     commit
     guardrail-scope

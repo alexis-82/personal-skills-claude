@@ -5,7 +5,7 @@ description: Chiarire una spec attraverso un dialogo di brainstorming con lo svi
 
 # Chiarimento requisiti + Brainstorming
 
-Fase 2/8 del workflow. Due obiettivi intrecciati:
+Fase 2/9 del workflow. Due obiettivi intrecciati:
 
 1. **Brainstorming** — dialogo aperto e bidirezionale per esplorare alternative (stack, architettura, approcci, trade-off) prima che qualunque decisione venga cementata nel piano.
 2. **Convergenza** — trasformare le esplorazioni in decisioni scritte e risolvere le ambiguità puntuali residue.
@@ -72,5 +72,5 @@ Non serve toccarli tutti — solo quelli **realmente aperti** per questa feature
 - **Non decidere per l'utente**: proponi, valuta insieme, poi scrivi la scelta. Ma non essere neutro se hai un'opinione — dichiarala.
 - **Il brainstorming è divergente prima di essere convergente**: mostra le alternative *prima* di eleggere una vincitrice, anche quando hai già in mente la risposta.
 - **Non riscrivere la spec da zero** — modifica chirurgica, aggiungendo la sezione "Decisioni prese".
-- Se emergono ambiguità che cambiano la spec di fondo (Goals rivisti, scope allargato), tornare a `/skill:spec`.
-- Se la spec è genuinamente chiusa e tutte le decisioni sono già state prese esplicitamente, dichiararlo e passare a `/skill:plan-tasks`.
+- Se emergono ambiguità che cambiano la spec di fondo (Goals rivisti, scope allargato), tornare a `/spec`.
+- Se la spec è genuinamente chiusa e tutte le decisioni sono già state prese esplicitamente, dichiararlo e passare a `/plan-tasks`.

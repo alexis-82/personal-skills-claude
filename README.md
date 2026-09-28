@@ -1,12 +1,12 @@
 # Feature-Driven Workflow — Claude Code Skills
 
-Set di **9 skill** per Claude Code che strutturano lo sviluppo di una funzionalità in fasi discrete, dalla spec iniziale al commit finale, con un **guardrail cross-cutting** che impedisce all'AI di uscire fuori dallo scope della richiesta.
+Set di **10 skill** per Claude Code che strutturano lo sviluppo di una funzionalità in fasi discrete, dalla spec iniziale al commit finale, con un **guardrail cross-cutting** che impedisce all'AI di uscire fuori dallo scope della richiesta.
 
 Le skill sono **stack-agnostic**: funzionano per script Python, librerie, CLI tool, servizi web, pipeline ML, app desktop, e qualunque altro tipo di software.
 
 ---
 
-## Le 9 skill, seguire il workflow in questo ordine
+## Le 10 skill, seguire il workflow in questo ordine
 
 | # | Skill | Ruolo | Output principale |
 |---|-------|-------|-------------------|
@@ -16,11 +16,12 @@ Le skill sono **stack-agnostic**: funzionano per script Python, librerie, CLI to
 | 04 | `analyze` | Analisi critica del piano | `.claude/analysis.md` |
 | 05 | `implement` | Scrivere il codice | Codice + `.claude/tasks.md` aggiornato |
 | 06 | `test` | Test contro criteri di accettazione | Suite verde |
-| 07 | `refactor` | Pulire con i test come rete di sicurezza | Codice più leggibile, comportamento invariato |
-| 08 | `commit` | Commit strutturati + eventuale PR | Storia git pulita |
+| 07 | `review` | Code review del codice implementato (correttezza, edge case, sicurezza, prestazioni, leggibilità) | `.claude/review.md` con findings per severità |
+| 08 | `refactor` | Pulire con i test come rete di sicurezza | Codice più leggibile, comportamento invariato |
+| 09 | `commit` | Commit strutturati + eventuale PR | Storia git pulita |
 | ⚠ | `guardrail-scope` | Cross-cutting: Guardarail AI | — |
 
-Ordine tipico: `spec → clarify → plan-tasks → (analyze) → implement → test → (refactor) → commit`. Le fasi `analyze` e `refactor` sono opzionali.
+Ordine tipico: `spec → clarify → plan-tasks → (analyze) → implement → test → (review) → (refactor) → commit`. Le fasi `analyze`, `review` e `refactor` sono opzionali.
 
 ---
 
@@ -89,7 +90,7 @@ Se serve, rendi lo script eseguibile una volta sola: `chmod +x install.sh`.
 ### Cosa fanno gli script
 
 - Creano `~/.claude/skills/` se manca.
-- Copiano le 9 skill (`spec`, `clarify`, `plan-tasks`, `analyze`, `implement`, `test`, `refactor`, `commit`, `guardrail-scope`), sovrascrivendo eventuali versioni precedenti con lo stesso nome.
+- Copiano le 10 skill (`spec`, `clarify`, `plan-tasks`, `analyze`, `implement`, `test`, `review`, `refactor`, `commit`, `guardrail-scope`), sovrascrivendo eventuali versioni precedenti con lo stesso nome.
 - Al termine, riavvia Claude Code per caricare le skill aggiornate.
 
 Ogni cartella skill contiene:
@@ -122,6 +123,7 @@ Le skill si attivano da sole in base al `description` YAML. Frasi che le trigger
 | "analizza", "verifica il piano" | `analyze` |
 | "implementa", "scrivi il codice" | `implement` |
 | "testa", "scrivi i test" | `test` |
+| "revisiona", "code review", "cerca bug nel codice" | `review` |
 | "refactora", "pulisci il codice" | `refactor` |
 | "committa", "apri PR" | `commit` |
 | "attenzione allo scope", "lavora sui binari" | `guardrail-scope` |
@@ -159,6 +161,12 @@ Immagina di dover aggiungere un endpoint di export in un servizio Python esisten
 
 [AI scrive test per ogni criterio di accettazione, verifica suite verde]
 
+> /review  (opzionale)
+
+[AI revisiona il codice su 5 assi (correttezza, edge case, sicurezza, prestazioni,
+ leggibilità), produce .claude/review.md con findings per severità. Se ci sono
+ blocker/major, torna a /implement; altrimenti prosegue.]
+
 > /refactor  (opzionale)
 
 [AI pulisce solo il codice appena scritto, non tocca il resto]
@@ -187,6 +195,7 @@ skills/
 ├── analyze/
 ├── implement/
 ├── test/
+├── review/
 ├── refactor/
 ├── commit/
 └── guardrail-scope/

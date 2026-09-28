@@ -5,7 +5,7 @@ description: Scrivere ed eseguire test per una funzionalità appena implementata
 
 # Testing e verifica
 
-Fase 6/8 del workflow. Verifica che l'implementazione soddisfi la spec.
+Fase 6/9 del workflow. Verifica che l'implementazione soddisfi la spec.
 
 ## Cosa fare
 
@@ -19,7 +19,7 @@ Fase 6/8 del workflow. Verifica che l'implementazione soddisfi la spec.
 4. Eseguire l'intera suite (non solo i nuovi test) per catturare regressioni.
 5. Se ci sono fallimenti: capire causa radice, non silenziare.
 6. Produrre `.claude/test-report.md` opzionale con esito, o riportare direttamente in chat.
-7. Con suite verde, suggerire `/skill:refactor` per pulire prima del commit, oppure `/skill:commit` per andare diretti al consolidamento.
+7. Con suite verde, suggerire `/review` per una revisione critica del codice prima di refactor/commit. Se l'utente salta la review, `/refactor` (per pulire) o `/commit` (per andare diretti al consolidamento).
 
 ## Output atteso
 
@@ -27,7 +27,7 @@ Test aggiunti, suite verde, coverage sui criteri di accettazione dichiarati.
 
 ## Regole
 
-- **[GUARDRAIL SCOPE]** Aggiungi test **solo** per la funzionalità corrente. Non riscrivere o "migliorare" test esistenti fuori dallo scope. Vedi `/skill:guardrail-scope`.
+- **[GUARDRAIL SCOPE]** Aggiungi test **solo** per la funzionalità corrente. Non riscrivere o "migliorare" test esistenti fuori dallo scope. Vedi `/guardrail-scope`.
 - Non testare l'implementazione (i dettagli), testa il comportamento (la spec).
 - Un test che passa senza fare nulla di significativo è peggio di un test mancante — verificarne il valore.
 - Se un test è flaky, marcarlo esplicitamente e aprire un task, non riprovare in loop.

@@ -5,7 +5,7 @@ description: Definire la specifica di una nuova funzionalità partendo da un'ide
 
 # Specifica funzionalità
 
-Fase 1/8 del workflow. Trasforma un'idea in una specifica azionabile con confini chiari.
+Fase 1/9 del workflow. Trasforma un'idea in una specifica azionabile con confini chiari.
 
 ## Cosa fare
 
@@ -13,7 +13,7 @@ Fase 1/8 del workflow. Trasforma un'idea in una specifica azionabile con confini
 2. Chiedere all'utente (o dedurre dal contesto) chi sono gli utenti, cosa devono ottenere e con quali vincoli.
 3. Compilare `.claude/spec.md` nella cartella del progetto (non in questa cartella skill, non nella root). Creare la cartella `.claude/` se non esiste. Il file deve contenere **tutte** le sezioni sotto, incluse Goals e Non-Goals.
 4. Rileggere Non-Goals con l'utente prima di procedere — è la sezione più importante per prevenire scope creep.
-5. Al termine, suggerire di passare a `/skill:clarify` se restano ambiguità, altrimenti a `/skill:plan-tasks`.
+5. Al termine, suggerire di passare a `/clarify` se restano ambiguità, altrimenti a `/plan-tasks`.
 
 ## Output atteso
 
